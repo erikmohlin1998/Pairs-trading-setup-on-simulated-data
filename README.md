@@ -53,6 +53,8 @@ The script produces:
 - backtest summary statistics
 - plots of the spread, z-score, and cumulative strategy return
 
+![Results](sample_output.png)
+
 ## Motivation
 
 This repository was built as a small portfolio project to demonstrate core concepts in:
