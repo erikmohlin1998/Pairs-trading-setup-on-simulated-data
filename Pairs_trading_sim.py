@@ -1,10 +1,24 @@
-# %% Relevant libraries
+"""
+Pairs Trading Backtest (Simulated Data)
+
+This script implements a simple pairs trading strategy on simulated cointegrated price series.
+A rolling OLS regression (Engle-Granger) is used to estimate the hedge ratio, from which a spread and rolling
+z-score are constructed. Trading signals are generated when the spread deviates sufficiently
+from its historical mean, and performance is evaluated through a basic backtest with
+transaction costs.
+
+The purpose of this project is to demonstrate the core mechanics of statistical arbitrage:
+cointegration testing, spread construction, signal generation, position sizing, and
+strategy evaluation.
+"""
+
+#%% Relevant libraries
 import numpy as np 
 import pandas as pd
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
 
-# %%Simulate cointegrated stock price series as random walks w. noise
+#%% Simulate cointegrated stock price series as random walks w. noise
 n = 1000
 walk = np.zeros(n, dtype=int)          
 walk[0] = 100
